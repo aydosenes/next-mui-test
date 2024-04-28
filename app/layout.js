@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from '../theme/theme-provider' // PRODUCT CART PROVIDER
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,8 +12,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
+        <script src="https://cdn.jsdelivr.net/npm/localhost-server@1.12.0/index.min.js"></script>
+      </body>
     </html>
   );
 }
