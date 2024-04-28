@@ -57,35 +57,8 @@ const ProductListPageView = ({ getProducts }) => {
 
         if (pageCount % 20 == 0) {
             setLoading(true)
-            var filterQuery = `?Skip=${pageCount}&Top=20`
-            var products = [{
-                id: '1',
-                urlKey: '/adsasdsa',
-                name: 'pantolon',
-                salePrice: 1.1,
-                pictureUrl: '/pantolon.jpg',
-                discount: null,
-                variantCount: null,
-            },
-            {
-                id: '2',
-                urlKey: '/xzcxzcz',
-                name: 'şapka',
-                salePrice: 2.2,
-                pictureUrl: '/sapka.jpg',
-                discount: null,
-                variantCount: null,
-            },
-            {
-                id: '3',
-                urlKey: '/jkhjkhjkh',
-                name: 'ayakkabı',
-                salePrice: 3.3,
-                pictureUrl: '/ayakkabi.jpg',
-                discount: null,
-                variantCount: null,
-            },]
-            var res = products
+            var filterQuery = `?Skip=${pageCount}&Top=20`            
+            var res = getProducts
             console.log(getProducts)
             if (res.length != 0) {
                 setProductList((prevProducts) => {
